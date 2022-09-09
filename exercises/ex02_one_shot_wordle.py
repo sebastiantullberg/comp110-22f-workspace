@@ -23,7 +23,12 @@ if len(guess) == 6:
                 emoji = (f"{emoji}{green_box}")
                 i = i + 1 
             else:      
-                emoji = (f"{emoji}{white_box}")
+                while t < int (len(secret_word) - 1):
+                    if guess[t] == secret_word[i]:
+                        emoji = (f"{emoji}{yellow_box}")
+                    else:
+                        emoji = (f"{emoji}{white_box}")
+                        t = t + 1
                 i = i + 1     
         print(emoji)
         print("Not quite. Play again soon!")   
