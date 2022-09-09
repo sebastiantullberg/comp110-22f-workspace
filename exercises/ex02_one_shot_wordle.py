@@ -12,13 +12,13 @@ guess: str = input("What is your 6-letter guess? ")
 i: int = 0
 t: int = 0
 
-while len(guess) != 6:                                                                           
+while len(guess) != len(secret_word):                                                                           
     guess = input("That was not 6 letters! Try again ")      
     
-    
+#now we will go into the alternative if statement where the length is correct
 if len(guess) == 6:
     if guess != secret_word:
-        while i < 6:
+        while i < len(secret_word):
             if guess[i] == secret_word[i]:
                 emoji = (f"{emoji}{green_box}")
                 i = i + 1 
@@ -28,7 +28,7 @@ if len(guess) == 6:
         print(emoji)
         print("Not quite. Play again soon!")   
     else:
-        while i < 6:
+        while i < len(secret_word):
             if guess[i] == secret_word[i]:
                 emoji = (f"{emoji}{green_box}")
                 i = i + 1
