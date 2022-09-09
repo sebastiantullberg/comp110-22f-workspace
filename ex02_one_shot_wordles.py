@@ -1,7 +1,7 @@
 """This is one shot wordle!"""
 __author__ = "730523735"
 
-# defining the boxes
+#defining the boxes
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
@@ -14,7 +14,7 @@ t: int = 0
 while len(guess) != len(secret_word):                                                                           
     guess = input("That was not 6 letters! Try again ")      
     
-# now we will go into the alternative if statement where the length is correct
+#now we will go into the alternative if statement where the length is correct
 if len(guess) == 6:
     if guess != secret_word:
         while i < len(secret_word):
