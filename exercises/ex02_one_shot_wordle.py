@@ -2,6 +2,9 @@
 __author__ = "730523735"
 
 # defining the boxes
+from unittest import result
+
+
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
@@ -22,8 +25,15 @@ if len(guess) == 6:
                 emoji = (f"{emoji}{green_box}")
                 i = i + 1 
             else:      
-                emoji = (f"{emoji}{white_box}")
-                i = i + 1     
+                yellow_check: int = 0
+                checking: bool = True
+                while yellow_check < len(secret_word) and checking:
+                    if secret_word[yellow_check] == guess[i]:
+                        emoji += yellow_box
+                        checking = False
+                    yellow_check += 1
+            emoji += white_box
+            i = i + 1     
         print(emoji)
         print("Not quite. Play again soon!")   
     else:
