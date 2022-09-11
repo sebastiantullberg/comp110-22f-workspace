@@ -23,9 +23,11 @@ emoji: str = ""
 def emojified(guess: str, secret: str) -> str:
     """Returns """
     i: int = 0
-    assert len(REPLACE_THIS_WITH_YOUR_GUESS_PARAMETERS_NAME) == len(REPLACE_THIS_WITH_YOUR_SECRET_PARAMETERS_NAME)
-    while i < len(word):
+    assert len(guess) == len(secret)
+    while i < len(secret):
         if contains_char(guess, secret[i]) == True:
             emoji += yellow_box
         else:
             emoji += white_box
+        i += 1
+    return emoji
