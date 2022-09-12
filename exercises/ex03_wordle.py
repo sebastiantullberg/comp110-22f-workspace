@@ -18,16 +18,20 @@ white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
 
-emoji: str = ""
-
 def emojified(guess: str, secret: str) -> str:
-    """Returns """
+    """Returns righjt emoji after all characters in secret are analyzed"""
     i: int = 0
+    emoji: str = ""
     assert len(guess) == len(secret)
     while i < len(secret):
-        if contains_char(guess, secret[i]) == True:
-            emoji += yellow_box
+        if contains_char(secret, guess[i]) == True:
+            if guess[i] == secret[i]:
+                emoji += green_box
+            else:
+                emoji += yellow_box
         else:
             emoji += white_box
         i += 1
     return emoji
+
+print(emojified("hello", "world"))
