@@ -2,7 +2,7 @@
 
 __author__ = "730523735"
 
-# 
+
 def contains_char(word: str, letter: str) -> bool:
     """Returns True or False."""
     i: int = 0
@@ -13,7 +13,7 @@ def contains_char(word: str, letter: str) -> bool:
         i += 1
     return False
 
-# set up color constants
+
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
@@ -38,13 +38,11 @@ def emojified(guess: str, secret: str) -> str:
         i += 1
     return emoji
 
-# print(emojified("hellp", "world"))
 
 def input_guess(num: int) -> str:
-    "Prompts user for specific character number guess"
+    """Prompts user for specific character number guess. """
     guess: str = input(f"Enter a {num} character word ")
     while len(guess) != num:
-        # loop to continue prompting the guesser until lengths equal each other
         guess = input(f"That wasn't {num} chars! Try again ")
     assert len(guess) == num
     return guess
@@ -52,12 +50,12 @@ def input_guess(num: int) -> str:
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    SECRET: str = "codes" # you can switch it up and put in another word
+    SECRET: str = "codes"
     win: bool = True
     turn: int = 1
     while turn <= 6 and win:
         print(f"=== Turn {turn}/6 ===")
-        guess: str = input_guess(len(SECRET)) # asking the user for a guess
+        guess: str = input_guess(len(SECRET))
         print(emojified(guess, SECRET))
         if guess == SECRET:
             print(f"You won in {turn}/6 turns!")
