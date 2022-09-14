@@ -52,7 +52,7 @@ def input_guess(num: int) -> str:
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    SECRET: str = "secret_word" # you can switch it up and put in another word
+    SECRET: str = "codes" # you can switch it up and put in another word
     win: bool = True
     turn: int = 1
     while turn <= 6 and win:
@@ -61,7 +61,10 @@ def main() -> None:
         print(emojified(guess, SECRET))
         if guess == SECRET:
             print(f"You won in {turn}/6 turns!")
-    i += 1
-
+            win = False
+        turn += 1
+    exit
+        
+    
 if __name__ == "__main__":
     main()
