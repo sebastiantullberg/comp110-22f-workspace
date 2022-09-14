@@ -28,7 +28,7 @@ def emojified(guess: str, secret: str) -> str:
     emoji: str = ""
     assert len(guess) == len(secret)
     while i < len(secret):
-        if contains_char(secret, guess[i]) == True:
+        if contains_char(secret, guess[i]) is True:
             if guess[i] == secret[i]:
                 emoji += green_box
             else:
@@ -40,7 +40,7 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(num: int) -> str:
-    """Prompts user for specific character number guess. """
+    """Prompts user for specific character number guess."""
     guess: str = input(f"Enter a {num} character word ")
     while len(guess) != num:
         guess = input(f"That wasn't {num} chars! Try again ")
@@ -61,6 +61,7 @@ def main() -> None:
             print(f"You won in {turn}/6 turns!")
             win = False
         turn += 1
+    print("X/6 - Sorry, try again tomorrow!")
     exit
         
     
