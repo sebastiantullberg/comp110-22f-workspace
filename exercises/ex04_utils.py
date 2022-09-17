@@ -29,3 +29,16 @@ def max(input: list[int]) -> int:
         i += 1
     return largest_int
 
+def is_equal(list_1: int, list_2: int) -> bool:
+    """Checks if given index of list 1 = same index of list 2"""
+    i: int = 0
+    if len(list_1) != len(list_2):
+        return False
+    while i < len(list_2):
+        if list_1[i] == list_2[i]:
+            i += 1
+        else:
+            return False
+    return True
+
+
