@@ -5,7 +5,7 @@ __author__ = "730523735"
 
 def all(rolls: list[int], number: int) -> bool:
     """Evaluates all int in list and checks if number mathes all."""
-    if len(input) == 0:
+    if len(rolls) == 0:
         return False
     i: int = 0
     while i < len(rolls):
@@ -21,7 +21,7 @@ def max(input: list[int]) -> int:
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     i: int = 1
-    largest_int = input[i]
+    largest_int = input[0]
     while i < len(input):
         if input[i] > largest_int:
             largest_int = input[i]
