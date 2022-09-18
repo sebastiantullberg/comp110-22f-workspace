@@ -1,16 +1,15 @@
-"""This is ex 3. """
+"""This is ex 3."""
 
 __author__ = "730523735"
 
-from random import randint
 
-
-def evaluate_list(rolls: list[int] = list(1, 2, 3), number: 2) -> bool:
-    """Evaluates all int in list and checks if number mathes all"""
+def all(rolls: list[int], number: int) -> bool:
+    """Evaluates all int in list and checks if number mathes all."""
+    if len(input) == 0:
+        return False
     i: int = 0
-    # 4,4,4 4
-    while i < len(list):
-        if number != list[i]:
+    while i < len(rolls):
+        if number != rolls[i]:
             return False 
         else:
             i += 1
@@ -18,19 +17,20 @@ def evaluate_list(rolls: list[int] = list(1, 2, 3), number: 2) -> bool:
 
 
 def max(input: list[int]) -> int:
-    """Returns largest integer"""
+    """Returns largest integer."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
-    i: int = 0
-    largest_integer = list[i]
-    while i < len(list):
-        if list[i + 1] > largest_int:
-            largest_int = list[i]
+    i: int = 1
+    largest_int = input[i]
+    while i < len(input):
+        if input[i] > largest_int:
+            largest_int = input[i]
         i += 1
     return largest_int
 
-def is_equal(list_1: int, list_2: int) -> bool:
-    """Checks if given index of list 1 = same index of list 2"""
+
+def is_equal(list_1: list[int], list_2: list[int]) -> bool:
+    """Checks if given index of list 1 = same index of list 2."""
     i: int = 0
     if len(list_1) != len(list_2):
         return False
@@ -40,5 +40,3 @@ def is_equal(list_1: int, list_2: int) -> bool:
         else:
             return False
     return True
-
-
