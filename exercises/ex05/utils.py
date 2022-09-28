@@ -4,7 +4,7 @@ __author__ = "730523735"
 
 
 def only_evens(list: list[int]) -> list[int]:
-    # returns only even ints from list
+    """Returns only even ints from list."""
     i: int = 0
     even_list: list[int] = []
     while i < len(list):
@@ -15,14 +15,14 @@ def only_evens(list: list[int]) -> list[int]:
 
 
 def concat(list_1: list[int], list_2: list[int]) -> list[int]:
-    # adds list 2 to list 1
+    """Adds list 2 to list 1."""
     accum_list: list[int] = list_1 + list_2
     return accum_list
 
 
 def sub(a_list: list[int], start: int, finish: int) -> list[int]:
-    # returns a list between the specified start index 
-    # and the end index - 1
+    """Returns a list between the specified start index."""
+    """And the end index - 1."""
     result: list[int] = []
     if len(a_list) == 0 or start > len(a_list) or finish <= 0:
         return result
