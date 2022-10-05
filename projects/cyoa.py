@@ -4,7 +4,7 @@ __author__ = "730523735"
 
 from random import randint
 
-points: int = 2990
+points: int = 200
 
 player: str = ""
 
@@ -29,7 +29,7 @@ def main() -> None:
         if points <= 0:
             print(f"Game over {garbage}")
             stop_playing()
-        if points >= 3000:
+        if points >= 400:
             print(f"You won! {gold}")
             stop_playing()
 
