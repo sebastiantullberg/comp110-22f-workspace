@@ -35,14 +35,16 @@ def main() -> None:
 
 
 def greet() -> None:
+    """Greets the player."""
     global player
     player = input("Hello, what is your name? ")
     print(f"Hello {player}! We are excited for you to play RPS with us!")
 
 
 def normal() -> None:
+    """Normal function which is the regular rock, paper, scissors game."""
     global points
-    robot_choice: int = randint(1,3)
+    robot_choice: int = randint(1, 3)
     robot_weapon: str = ""
     if robot_choice == 1:
         robot_weapon = "rock"
@@ -68,7 +70,6 @@ def normal() -> None:
         if robot_weapon == "paper":
             points = points
 
-
     if Choice_of_weapon == "scissors":
         if robot_weapon == "rock":
             points -= 50
@@ -78,18 +79,20 @@ def normal() -> None:
             points = points
 
 
-
 def gamble(health: int) -> int:
-    x: int = randint(1,2)
+    """Gamble your health!"""
+    x: int = randint(1, 2)
     if x == 1:
         return health * 0.70
     if x == 2:
         return health * 1.25
 
+
 def stop_playing() -> None:
+    """Quits and resets the game."""
     print("Thanks for playing with us!")
     quit()
 
 
 if __name__ == "__main__":
-  main()
+    main()
