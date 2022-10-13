@@ -53,3 +53,8 @@ for school in schools:
 
 
 print(schools[schools])
+
+# Duplicate values are permitted in dictionaries.
+# Duplicate keys are not permitted in dictionaries.
+
+# Key error if the key is not there
