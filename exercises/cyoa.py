@@ -79,12 +79,12 @@ def normal() -> None:
             points = points
 
 
-def gamble(health: int) -> int:
+def gamble(health: int) -> float:
     """Gamble your health!"""
     x: int = randint(1, 2)
     if x == 1:
         return health * 0.70
-    if x == 2:
+    else:
         return health * 1.25
 
 
