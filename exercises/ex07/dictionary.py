@@ -30,7 +30,7 @@ def favorite_color(identity: dict[str, str]) -> str:
 
 
 def count(a: list[str]) -> dict[str, int]:
-    """Returns a dict with the words and how many times it occurs in the initial list"""
+    """Returns a dict with the words and how many times it occurs in the initial list."""
     new_dict: dict[str, int] = dict()
     i: int = 0
     while i < len(a):

@@ -4,6 +4,7 @@ __author__ = "730523735"
 
 from dictionary import invert, favorite_color, count
 
+
 # The three following functions test invert
 def invert() -> None:
     """Edge case."""
@@ -18,7 +19,7 @@ def invert() -> None:
 
 
 def invert() -> None:
-    """lowercase words."""
+    """Lowercase words."""
     old_key: dict[str, str] = {"hey": "mon", "vil": "mor"}
     assert invert(old_key) == {"mon": "hey", "mor": "vil"}
 
@@ -50,12 +51,12 @@ def count() -> None:
 
 
 def count() -> None:
-    """count"""
+    """Count."""
     a: list[str] = ("hey", "hvad", "hedder")
     assert count(a) == {"hey": 1, "hvad": 1, "hedder": 1}
 
 
 def count() -> None:
-    """Multiple"""
+    """Multiple."""
     a: list[str] = ("hey", "hey", "hedder")
     assert count(a) == {"hey": 2, "hedder": 1}
