@@ -43,14 +43,11 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(rows: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only the first `N` (a parameter) rows of data for each column."""
     result: dict[str, list[str]] = {}
-    for key, value_lists in rows.items():
-        k: list[str] = []
-        i: int = 0
-        for item in value_lists:
-            if i < n:
-                k.append(item)
-                i += 1
-        result[key] = 1
+    for column in rows:
+        new_new: list[str] = []
+        for hey in range(n):
+            new_new.append(rows[column][hey])
+            result[column] = new_new
     return result
 
 
