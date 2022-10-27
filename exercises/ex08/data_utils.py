@@ -1,11 +1,12 @@
 """Dictionary related utility functions."""
 
-__author__ = ""
+__author__ = "730523735"
 
 # Define your functions below
 
-from io import TextIOWrapper
+
 from csv import DictReader
+
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
     """Read the rows of a csv into a 'table."""
@@ -39,21 +40,22 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     return result
 
 
-def head(rows: dict[str, list[str]], num_rows: int) -> dict[str, list[str]]:
-    """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only
-    the first `N` (a parameter) rows of data for each column."""
-    new: dict[str, list[str]] = {}
-    for column in rows:
-        new_new: list[str] = []
-        for n in range(num_rows):
-            new_new.append(rows[column][n])
-        new[column] = new_new
-    return new
+def head(rows: dict[str, list[str]], n: int) -> dict[str, list[str]]:
+    """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only the first `N` (a parameter) rows of data for each column."""
+    result: dict[str, list[str]] = {}
+    for key, value_lists in rows.items():
+        k: list[str] = []
+        i: int = 0
+        for item in value_lists:
+            if i < n:
+                k.append(item)
+                i += 1
+        result[key] = 1
+    return result
 
 
 def select(rows: dict[str, list[str]], names: list[str]) -> dict[str, list[str]]:
-    """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only
-    a specific subset of the original columns."""
+    """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only a specific subset of the original columns."""
     result: dict[str, list[str]] = {}
     for val in names:
         result[val] = rows[val]
@@ -61,8 +63,7 @@ def select(rows: dict[str, list[str]], names: list[str]) -> dict[str, list[str]]
 
 
 def concat(a: dict[str, list[str]], b: dict[str, list[str]]) -> dict[str, list[str]]:
-    """Produce a new column-based (e.g. `dict[str, list[str]]`) table with
-    two column-based tables combined."""
+    """Produce a new column-based (e.g. `dict[str, list[str]]`) table with two column-based tables combined."""
     result: dict[str, list[str]] = {}
     for column in a:
         result[column] = a[column] 
@@ -75,10 +76,7 @@ def concat(a: dict[str, list[str]], b: dict[str, list[str]]) -> dict[str, list[s
 
 
 def count(list_vals: list[str]) -> dict[str, int]:
-    """This function will produce a `dict[str, int]` where each
-    key is a unique value in the given list and each value
-    associated is the _count_ of the number
-    of times that value appeared in the input list."""
+    """This function will produce a `dict[str, int]` where each key is a unique value in the given list and each value associated is the _count_ of the number of times that value appeared in the input list."""
     result: dict[str, int] = {}
     for item in list_vals:
         if item in result:
