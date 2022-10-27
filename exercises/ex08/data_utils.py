@@ -40,15 +40,15 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     return result
 
 
-def head(rows: dict[str, list[str]], n: int) -> dict[str, list[str]]:
+def head(rows: dict[str, list[str]], num_rows: int) -> dict[str, list[str]]:
     """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only the first `N` (a parameter) rows of data for each column."""
-    result: dict[str, list[str]] = {}
+    new: dict[str, list[str]] = {}
     for column in rows:
         new_new: list[str] = []
-        for hey in range(n):
-            new_new.append(rows[column][hey])
-            result[column] = new_new
-    return result
+        for n in range(num_rows):
+            new_new.append(rows[column][n])
+        new[column] = new_new
+    return new
 
 
 def select(rows: dict[str, list[str]], names: list[str]) -> dict[str, list[str]]:
