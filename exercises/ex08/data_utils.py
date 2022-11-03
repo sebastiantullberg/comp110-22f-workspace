@@ -44,10 +44,15 @@ def head(rows: dict[str, list[str]], num_rows: int) -> dict[str, list[str]]:
     """Produce a new column-based (e.g. `dict[str, list[str]]`) table with only the first `N` (a parameter) rows of data for each column."""
     new: dict[str, list[str]] = {}
     for column in rows:
-        new_new: list[str] = []
-        for n in range(num_rows):
-            new_new.append(rows[column][n])
-        new[column] = new_new
+        new_new: list[str] = rows[column]
+        end: list[str] = []
+        i: int = 0
+        if num_rows > len(rows):
+            return rows
+        while i < num_rows:
+            end.append(new_new[i])
+            i += 1
+        new[column] = end
     return new
 
 
@@ -68,7 +73,7 @@ def concat(a: dict[str, list[str]], b: dict[str, list[str]]) -> dict[str, list[s
         if column in result:
             result[column] += b[column]
         else:
-            result[column] = a[column]
+            result[column] = b[column]
     return result
 
 
